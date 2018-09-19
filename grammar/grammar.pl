@@ -46,8 +46,8 @@ bot sub [sign, syn, pos, valence, list, agr, num, per, gnd, case, bool].
                             val : (  spr :  [ ],
                                       comps: [ ] ))).
 
-det(X, Y) +++> (syn: (head : (det,                        
-                                              agr : X
+detr(X, Y) +++> (syn: (head : (det,                        
+                                              agr : X,
                                               count : Y),
                             val : (  spr :  [ ],
                                       comps: [ ] ))).
@@ -80,15 +80,17 @@ singn_n lex_rule
 
 % plural noun lexical rule
 
-plurl_n lex_rule  
-   (n_lxm, (syn : Y))
-   **> (word, (syn : (Y, head: (agr: (num: pl)))))
- morphs
-    X becomes (X,s).
+% plurl_n lex_rule  
+%    (n_lxm, (syn : (head: (case : nom ; case, agr: (num: sg)))))
+%    **> (word, (syn : (head: (agr: (num: pl)))))
+%  morphs
+%     X becomes (X,s).
+
 % plurl_n lex_rule  
 %   (n_lxm,
 %     (syn :
 %       (Y, head: (
+%         case: nom ; case,
 %         agr: (num: sg)
 %       ))
 %     )
@@ -201,7 +203,11 @@ the --->
   word,
   (
     syn:(
-      head: (det)
+      head: (det),
+      val: (
+        spr: [],
+        comps: []
+      )
     )
   ).
 
@@ -213,39 +219,47 @@ every --->
         det,
         agr : (num: sg),
         count : plus
+      ),
+      val: (
+        spr: [],
+        comps: []
       )
     )
   ).
 
 
-boy --->
-  n_lxm,                        
-  (syn:
-    (head: 
-      (noun,
-        agr : (
-          per : trd, 
-          gnd : mas
-        )
-      )
-    )
-  ).
-
-% boys --->
-%   word,
-%   (
-%     syn: (
-%       head: (
-%         noun,
-%         agr: (
-%           num: pl,
-%           gen: masc,
-%           per: trd
-%         ),
-
+% boy --->
+%   n_lxm,                        
+%   (syn:
+%     (head: 
+%       (noun,
+%         agr : (
+%           per : trd,
+%           num: sg,
+%           gnd : mas
+%         )
 %       )
 %     )
 %   ).
+
+boys --->
+  word,
+  (
+    syn: (
+      head: (
+        noun,
+        agr : (X, (
+          num : pl,
+          gnd : mas,
+          per : trd
+        ))
+      ),
+      val: (
+        spr: [detr(X,plus)],
+        comps: []
+      )
+    )
+  ).
 
 
 % Verbs
