@@ -3,7 +3,7 @@
 
 % ale must be located one directory up 
 init :- 
-   compile('../ale_swi.pl'), 
+   compile('../ale_swi.pl'),
    ldg.
 
 ldg :- 

@@ -46,8 +46,7 @@ bot sub [sign, syn, pos, valence, list, agr, num, per, gnd, case, bool].
                             val : (  spr :  [ ],
                                       comps: [ ] ))).
 
-det(X,Y) +++> (word, syn : (head : (det, agr : X, count : Y),
-                           val : (spr : [], comps : []))).
+
 
 % Type constraints
 % ------------------------------------------------------------------------------
@@ -56,7 +55,7 @@ n_lxm cons ( syn:(head: noun,
                               val : (spr : [   ],
                                       comps: [  ] ) )).
 
-v_lxm cons (syn:(head: (verb, agr : X),
+ v_lxm cons (syn:(head: (verb, agr : X),
                              val :    (spr : [  np(X,nom)  ] ) )).
 
 intr_v_lxm cons (syn:(val : (comps : [   ] ) )).
@@ -168,12 +167,8 @@ him --->
                                  per : trd,
                                  gnd : mas )))).
 
-  
-%the --->
-%  det(agr,bool).
-  
-%every --->
-%  det((num : sg), (count : plus)).
+
+
 
 % Verbs
  
