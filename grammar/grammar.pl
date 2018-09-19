@@ -17,7 +17,7 @@ bot sub [sign, syn, pos, valence, list, agr, num, per, gnd, case, bool].
                     intro [agr : agr].
             det sub []
                    intro [count : bool].
-             noun sub []
+            noun sub []
                    intro [case : case]. 
    agr sub []
          intro [num : num,
@@ -46,7 +46,11 @@ bot sub [sign, syn, pos, valence, list, agr, num, per, gnd, case, bool].
                             val : (  spr :  [ ],
                                       comps: [ ] ))).
 
-
+det(X, Y) +++> (syn: (head : (det,                        
+                                              agr : X
+                                              count : Y),
+                            val : (  spr :  [ ],
+                                      comps: [ ] ))).
 
 % Type constraints
 % ------------------------------------------------------------------------------
@@ -73,6 +77,32 @@ singn_n lex_rule
    **> (word, (syn : Y))
  morphs
     X becomes X.
+
+% plural noun lexical rule
+
+plurl_n lex_rule  
+   (n_lxm, (syn : Y))
+   **> (word, (syn : (Y, head: (agr: (num: pl)))))
+ morphs
+    X becomes (X,s).
+% plurl_n lex_rule  
+%   (n_lxm,
+%     (syn :
+%       (Y, head: (
+%         agr: (num: sg)
+%       ))
+%     )
+%   )
+%   **> 
+%   (word, 
+%     (syn : 
+%       (Y, head: (
+%         agr: (num, pl)
+%       ))
+%     )
+%   )
+%  morphs
+%     X becomes (X,s).
 
 % Past tense lexical rule
 
@@ -167,7 +197,55 @@ him --->
                                  per : trd,
                                  gnd : mas )))).
 
+the --->
+  word,
+  (
+    syn:(
+      head: (det)
+    )
+  ).
 
+every --->
+  word,
+  (
+    syn:(
+      head: (
+        det,
+        agr : (num: sg),
+        count : plus
+      )
+    )
+  ).
+
+
+boy --->
+  n_lxm,                        
+  (syn:
+    (head: 
+      (noun,
+        agr : (
+          per : trd, 
+          gnd : mas
+        )
+      )
+    )
+  ).
+
+% boys --->
+%   word,
+%   (
+%     syn: (
+%       head: (
+%         noun,
+%         agr: (
+%           num: pl,
+%           gen: masc,
+%           per: trd
+%         ),
+
+%       )
+%     )
+%   ).
 
 
 % Verbs
