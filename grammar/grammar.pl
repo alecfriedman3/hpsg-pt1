@@ -238,111 +238,22 @@ boys --->
   ).
 
 
-% det
+% determiners
 
 the --->
-  word,
-  (
-    syn:(
-      head: (det),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
-
+  word, detr(agr, bool).
 every --->
-  word,
-  (
-    syn:(
-      head: (
-        det,
-        agr : (num: sg),
-        count : plus
-      ),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
-
+  word, detr((num: sg), plus).
 each --->
-  word,
-  (
-    syn:(
-      head: (
-        det,
-        agr : (num: sg),
-        count : plus
-      ),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
-
+  word, detr((num: sg), plus).
 this --->
-  word,
-  (
-    syn:(
-      head: (
-        det,
-        agr : (num: sg)
-      ),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
-
+  word, detr((num: sg), bool).
 these --->
-  word,
-  (
-    syn:(
-      head: (
-        det,
-        agr : (num: pl)
-      ),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
-
+  word, detr((num: pl), bool).
 many --->
-  word,
-  (
-    syn:(
-      head: (
-        det,
-        agr : (num: pl)
-      ),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
-
+  word, detr((num: pl), bool).
 most --->
-  word,
-  (
-    syn:(
-      head: (
-        det,
-        agr : (num: pl)
-      ),
-      val: (
-        spr: [],
-        comps: []
-      )
-    )
-  ).
+  word, detr((num: pl), bool).
 
 % Verbs
  
