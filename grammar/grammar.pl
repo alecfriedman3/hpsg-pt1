@@ -199,6 +199,47 @@ him --->
                                  per : trd,
                                  gnd : mas )))).
 
+boy --->
+  word,
+  (
+    syn: (
+      head: (
+        noun,
+        agr : (X, (
+          num : sg,
+          gnd : mas,
+          per : trd
+        ))
+      ),
+      val: (
+        spr: [detr(X,plus)],
+        comps: []
+      )
+    )
+  ).
+
+boys --->
+  word,
+  (
+    syn: (
+      head: (
+        noun,
+        agr : (X, (
+          num : pl,
+          gnd : mas,
+          per : trd
+        ))
+      ),
+      val: (
+        spr: [detr(X,plus)],
+        comps: []
+      )
+    )
+  ).
+
+
+% det
+
 the --->
   word,
   (
@@ -227,40 +268,81 @@ every --->
     )
   ).
 
-
-% boy --->
-%   n_lxm,                        
-%   (syn:
-%     (head: 
-%       (noun,
-%         agr : (
-%           per : trd,
-%           num: sg,
-%           gnd : mas
-%         )
-%       )
-%     )
-%   ).
-
-boys --->
+each --->
   word,
   (
-    syn: (
+    syn:(
       head: (
-        noun,
-        agr : (X, (
-          num : pl,
-          gnd : mas,
-          per : trd
-        ))
+        det,
+        agr : (num: sg),
+        count : plus
       ),
       val: (
-        spr: [detr(X,plus)],
+        spr: [],
         comps: []
       )
     )
   ).
 
+this --->
+  word,
+  (
+    syn:(
+      head: (
+        det,
+        agr : (num: sg)
+      ),
+      val: (
+        spr: [],
+        comps: []
+      )
+    )
+  ).
+
+these --->
+  word,
+  (
+    syn:(
+      head: (
+        det,
+        agr : (num: pl)
+      ),
+      val: (
+        spr: [],
+        comps: []
+      )
+    )
+  ).
+
+many --->
+  word,
+  (
+    syn:(
+      head: (
+        det,
+        agr : (num: pl)
+      ),
+      val: (
+        spr: [],
+        comps: []
+      )
+    )
+  ).
+
+most --->
+  word,
+  (
+    syn:(
+      head: (
+        det,
+        agr : (num: pl)
+      ),
+      val: (
+        spr: [],
+        comps: []
+      )
+    )
+  ).
 
 % Verbs
  
