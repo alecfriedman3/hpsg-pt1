@@ -436,6 +436,22 @@ cats> (Y).
 % cat> (X, syn: (val: Y)).
 
 
+% l_head_mod_struc rule
+% (phrase, (syn: (val: Y)))
+% ===>
+% cat> (X, syn: (val: Y)),
+% cat> (syn:
+%         (val: 
+%           (spr: e_list,
+%           comps: e_list,
+%           mod: 
+%             (left, sign: X)
+%           )
+%         )
+%       ).
+
+
+
 
 % Consistency check
 % ------------------------------------------------------------------------------
